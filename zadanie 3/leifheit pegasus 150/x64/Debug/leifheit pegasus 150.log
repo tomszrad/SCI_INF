@@ -1,0 +1,3 @@
+﻿  leifheit pegasus 150.cpp
+C:\Users\tomek\source\repos\leifheit pegasus 150\leifheit pegasus 150\leifheit pegasus 150.cpp(23,46): warning C4267: "argument": konwersja z "size_t" do "int", możliwa utrata danych
+  leifheit pegasus 150.vcxproj -> C:\Users\tomek\source\repos\leifheit pegasus 150\x64\Debug\leifheit pegasus 150.exe
