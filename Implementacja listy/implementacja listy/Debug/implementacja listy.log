@@ -1,2 +1,4 @@
 ﻿  implementacja listy.cpp
-  implementacja listy.vcxproj -> C:\Users\tomszrad\Desktop\implementacja listy kopia pod wersje visuala w szkole\implementacja listy\Debug\implementacja listy.exe
+c:\users\tomszrad.sci\desktop\sci_inf\implementacja listy\implementacja listy\listy.h(29): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+c:\users\tomszrad.sci\desktop\sci_inf\implementacja listy\implementacja listy\listy.h(36): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  implementacja listy.vcxproj -> C:\Users\tomszrad.SCI\Desktop\SCI_INF\Implementacja listy\Debug\implementacja listy.exe

@@ -1,5 +1,8 @@
 #include "listy.h"
 #include <iostream>
+#include <time.h>
+#include <stdlib.h>
+
 using namespace std;
 List::List()
 {
@@ -27,10 +30,10 @@ void List::Print()
 	ListElement* wskHead = head;
 	while (wskHead)
 	{
-		cout << wskHead->value;
+		cout << wskHead->value << endl;
 		wskHead = wskHead->nextElement;
 	}
-	cout << "\nrozmiar listy: " << size << endl;
+	//cout << "\nrozmiar listy: " << size << endl;
 }
 
 void List::Add(int val)
@@ -67,7 +70,26 @@ void List::Remove()
 }
 
 
+void wektor::dodajElement(int a)
+{
+	int* tablica2 = new int[size + 1];
+	for (int i = 0; i < size; i++)
+	{
+		tablica2[i] = tablica[i];
+	}
+	tablica2[size] = a;
+	delete[] tablica;
+	tablica = tablica2;
+	size++;
 
+}
+
+void wektor::Print()
+{
+	for (int i = 0; i < size; i++) {
+		std::cout << tablica[i] << endl;
+	}
+}
 
 
 

@@ -1,5 +1,6 @@
 ﻿#include <chrono>
 #include <vector>
+#include <list>
 #include <iostream>
 #include "listy.h"
 #include <conio.h>
@@ -11,22 +12,99 @@ int main()
 {
 	List lista;
 	auto start = std::chrono::high_resolution_clock::now();
-	for (int i = 0; i < 1000000; i++) {
+	for (int i = 0; i < 10000; i++) {
 		lista.Add(i);
 	}
 	auto end = std::chrono::high_resolution_clock::now();
 	chrono::duration<double> elapsed_second = end - start;
-	cout << "\nCzas dodawania elementow do zaimplementowanej listy: " << elapsed_second.count() << " sekund\n";
 
+	
+	////////////////////////////////////////////
 
-	vector <int> wektor;
+	list<int> stdLista;
+	auto startL = std::chrono::high_resolution_clock::now();
+	for (int i = 0; i < 10000; i++) {
+		stdLista.push_back(i);
+	}
+	auto endL = std::chrono::high_resolution_clock::now();
+	chrono::duration<double> elapsed_secondL = endL - startL;
+	
+
+	/////////////////////////////////////////////
+
+	wektor wektor;
+	auto startW = std::chrono::high_resolution_clock::now();
+	for (int i = 0; i < 10000; i++) {
+		wektor.dodajElement(i);
+	}
+	auto endW = std::chrono::high_resolution_clock::now();
+	chrono::duration<double> elapsed_secondW = endW - startW;
+	
+	
+	/////////////////////////////////////////////
+
+	vector <int> stdWektor;
 	auto startV = std::chrono::high_resolution_clock::now();
-	for (int i = 0; i < 1000000; i++) {
-		wektor.push_back(i);
+	for (int i = 0; i < 10000; i++) {
+		stdWektor.push_back(i);
 	}
 	auto endV = std::chrono::high_resolution_clock::now();
 	chrono::duration<double> elapsed_secondV = endV - startV;
-	cout << "\nCzas dodawania elementow do vectora: " << elapsed_secondV.count() << " sekund\n";
+
+	///////////////////////////////////////////////
+
+	auto Ostart = std::chrono::high_resolution_clock::now();
+
+		lista.Print();
+	
+	auto Oend = std::chrono::high_resolution_clock::now();
+	chrono::duration<double> Oelapsed_second = Oend - Ostart;
+	
+
+	////////////////////////////////////////////
+
+	auto OstartL = std::chrono::high_resolution_clock::now();
+	
+		for (auto const &i : stdLista) {
+				std::cout << i << std::endl;
+		}
+
+	auto OendL = std::chrono::high_resolution_clock::now();
+	chrono::duration<double> Oelapsed_secondL = OendL - OstartL;
+
+
+	/////////////////////////////////////////////
+
+	auto OstartW = std::chrono::high_resolution_clock::now();
+
+		wektor.Print();
+
+	auto OendW = std::chrono::high_resolution_clock::now();
+	chrono::duration<double> Oelapsed_secondW = OendW - OstartW;
+
+
+	/////////////////////////////////////////////
+
+	auto OstartV = std::chrono::high_resolution_clock::now();
+
+		for (auto const &i : stdWektor) {
+			std::cout << i << std::endl;
+		}
+
+	auto OendV = std::chrono::high_resolution_clock::now();
+	chrono::duration<double> Oelapsed_secondV = OendV - OstartV;
+
+
+	cout << "\nCzas dodawania elementow do zaimplementowanej listy: " << elapsed_second.count() << " sekund\n";
+	cout << "\nCzas dodawania elementow do std::list: " << elapsed_secondL.count() << " sekund\n";
+	cout << "\nCzas dodawania elementow do zaimplementowanego wektora: " << elapsed_secondW.count() << " sekund\n";
+	cout << "\nCzas dodawania elementow do std:vector: " << elapsed_secondV.count() << " sekund\n";
+	cout << "\n////////////////////////////////////////////////////////////\n";
+	cout << "\nCzas odczytu elementow z zaimplementowanej listy: " << Oelapsed_second.count() << " sekund\n";
+	cout << "\nCzas odczytu elementow z std::list: " << Oelapsed_secondL.count() << " sekund\n";
+	cout << "\nCzas odczytu elementow z zaimplementowanego wektora: " << Oelapsed_secondW.count() << " sekund\n";
+	cout << "\nCzas odczytu elementow z std:vector: " << Oelapsed_secondV.count() << " sekund\n";
+
 
 
 

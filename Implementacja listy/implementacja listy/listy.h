@@ -17,3 +17,33 @@ public:
 	void Remove();
 	int At(int index);
 };
+
+
+
+class wektor
+{
+public:
+	wektor() {
+		size = 10;
+		tablica = new int[size];
+		for (int i = 0; i < size; i++) {
+			tablica[i] = 0;
+		}
+	}
+	wektor(unsigned int welocemtoislandofsnakes) {
+		size = welocemtoislandofsnakes;
+		tablica = new int[size];
+		for (int i = 0; i < size; i++) {
+			tablica[i] = 0;
+		}
+	}
+	void dodajElement(int a);
+	void Print();
+	~wektor() {
+		delete[] tablica;
+	}
+
+private:
+	int* tablica;
+	unsigned int size;
+};
