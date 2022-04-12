@@ -100,7 +100,8 @@ compiler_rcc_clean:
 release/qrc_qml.cpp: ../logowanie/qml.qrc \
 		../../Qt/5.15.2/mingw81_64/bin/rcc.exe \
 		../logowanie/Logowanie.qml \
-		../logowanie/main.qml
+		../logowanie/main.qml \
+		../logowanie/wallpaper.png
 	D:\Qt\5.15.2\mingw81_64\bin\rcc.exe -name qml ..\logowanie\qml.qrc -o release\qrc_qml.cpp
 
 compiler_moc_predefs_make_all: release/moc_predefs.h

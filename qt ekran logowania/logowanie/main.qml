@@ -8,9 +8,9 @@ Window {
     height: 600
     visible: true
     title: qsTr("Logowanie")
-    property string login:"abcd"
-
+  //  property string login:"abcd"
     Logowanie{
+    id:ekranlogowania
     anchors.fill: parent
     }
 
