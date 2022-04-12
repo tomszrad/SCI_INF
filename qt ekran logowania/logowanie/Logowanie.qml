@@ -6,6 +6,8 @@ Item {
 
 
     Image {
+        height:okno.height
+        width:okno.width
         clip: true
         fillMode: Image.PreserveAspectCrop
         source: "qrc:/wallpaper.png"

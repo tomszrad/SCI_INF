@@ -4,6 +4,7 @@ import QtQuick.Controls 2.15
 
 
 Window {
+    id:okno
     width: 400
     height: 600
     visible: true
